@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-midnight: #030611;
+  --color-abyss: #060B19;
+  --color-cobalt: #0B1938;
+  --color-electric: #2563EB;
+  --color-ice: #93C5FD;
+  --color-glacial: #FFFFFF;
+  --color-silver: #8E96AA;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: var(--color-midnight);
+    color: var(--color-glacial);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    color-scheme: dark;
+    background-color: var(--color-midnight);
+    color: var(--color-glacial);
+    overflow-x: hidden;
+  }
+
+  input,
+  textarea,
+  select {
+    color-scheme: dark;
+    background-color: #050a18;
+    color: #ffffff;
+    caret-color: #60a5fa;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(142, 150, 170, 0.55);
+  }
+
+  select option {
+    background-color: #060b19;
+    color: #ffffff;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #050a18 inset !important;
+    box-shadow: 0 0 0px 1000px #050a18 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #60a5fa !important;
+  }
+
+  ::selection {
+    background-color: #2563EB;
+    color: #FFFFFF;
+  }
+
+  :focus-visible {
+    outline: 2px solid #93C5FD;
+    outline-offset: 4px;
+  }
+}
+
+@layer utilities {
+  .editorial-container {
+    width: 100%;
+    max-width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1.5rem, 4.5vw, 4.5rem);
+    padding-right: clamp(1.5rem, 4.5vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
